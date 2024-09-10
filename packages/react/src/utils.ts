@@ -40,10 +40,8 @@ export function warnAboutMissingStyles(el?: HTMLElement) {
   if (
     typeof window !== 'undefined' &&
     typeof process !== 'undefined' &&
-    // eslint-disable-next-line turbo/no-undeclared-env-vars
-    (process?.env?.NODE_ENV === 'dev' ||
       // eslint-disable-next-line turbo/no-undeclared-env-vars
-      process?.env?.NODE_ENV === 'development')
+      process?.env?.NODE_ENV === 'development'
   ) {
     const target = el ?? document.querySelector('.lk-room-container');
     if (target && !getComputedStyle(target).getPropertyValue('--lk-has-imported-styles')) {
